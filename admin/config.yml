@@ -1,0 +1,140 @@
+backend:
+  name: github
+  repo: TU_USUARIO_DE_GITHUB/TU_REPOSITORIO
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "assets/uploads"
+
+locale: "es"
+
+collections:
+  - name: "settings"
+    label: "Contenido de la landing"
+    files:
+      - name: "site"
+        label: "Página principal"
+        file: "content/site.json"
+        format: "json"
+        fields:
+          - label: "Marca"
+            name: "brand"
+            widget: "object"
+            fields:
+              - { label: "Nombre", name: "name", widget: "string" }
+              - { label: "Subtítulo", name: "subtitle", widget: "string" }
+              - { label: "Logo", name: "logo", widget: "image", required: false }
+          - label: "Portada"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Imagen", name: "image", widget: "image" }
+              - { label: "Texto alternativo de imagen", name: "imageAlt", widget: "string", required: false }
+              - { label: "Etiqueta superior", name: "eyebrow", widget: "string" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Texto", name: "text", widget: "text" }
+              - { label: "Botón principal", name: "primaryButton", widget: "string" }
+              - { label: "Botón secundario", name: "secondaryButton", widget: "string" }
+          - label: "Datos rápidos"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Valor", name: "value", widget: "string" }
+              - { label: "Descripción", name: "label", widget: "string" }
+          - label: "Quiénes somos"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Imagen", name: "image", widget: "image" }
+              - { label: "Texto alternativo de imagen", name: "imageAlt", widget: "string", required: false }
+              - { label: "Etiqueta superior", name: "eyebrow", widget: "string" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Texto", name: "text", widget: "text" }
+              - label: "Puntos"
+                name: "bullets"
+                widget: "list"
+                field: { label: "Punto", name: "item", widget: "string" }
+          - label: "Galería"
+            name: "gallery"
+            widget: "object"
+            fields:
+              - { label: "Etiqueta superior", name: "eyebrow", widget: "string" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Título del carrusel", name: "carouselTitle", widget: "string" }
+              - label: "Fotos"
+                name: "items"
+                widget: "list"
+                label_singular: "Cabaña"
+                fields:
+                  - { label: "Imagen principal exterior", name: "image", widget: "image" }
+                  - { label: "Texto alternativo", name: "alt", widget: "string", required: false }
+                  - { label: "Descripción visible en el carrusel", name: "caption", widget: "string" }
+                  - { label: "Nombre de la cabaña", name: "name", widget: "string" }
+                  - { label: "Descripción detallada", name: "description", widget: "text", required: false }
+                  - label: "Datos clave"
+                    name: "details"
+                    widget: "list"
+                    required: false
+                    fields:
+                      - { label: "Etiqueta", name: "label", widget: "string" }
+                      - { label: "Valor", name: "value", widget: "string" }
+                  - label: "Fotos exteriores para el carrusel"
+                    name: "exteriorImages"
+                    widget: "list"
+                    required: false
+                    fields:
+                      - { label: "Imagen", name: "image", widget: "image" }
+                      - { label: "Texto alternativo", name: "alt", widget: "string", required: false }
+                  - label: "Fotos del interior"
+                    name: "interiorImages"
+                    widget: "list"
+                    required: false
+                    fields:
+                      - { label: "Imagen", name: "image", widget: "image" }
+                      - { label: "Texto alternativo", name: "alt", widget: "string", required: false }
+                  - label: "Fotos del proceso de construcción"
+                    name: "constructionImages"
+                    widget: "list"
+                    required: false
+                    fields:
+                      - { label: "Imagen", name: "image", widget: "image" }
+                      - { label: "Texto alternativo", name: "alt", widget: "string", required: false }
+          - label: "Servicios"
+            name: "services"
+            widget: "object"
+            fields:
+              - { label: "Etiqueta superior", name: "eyebrow", widget: "string" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Texto del enlace", name: "cta", widget: "string" }
+              - label: "Servicios"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Número", name: "number", widget: "string" }
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Texto", name: "text", widget: "text" }
+          - label: "Contacto"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Etiqueta superior", name: "eyebrow", widget: "string" }
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Texto", name: "text", widget: "text" }
+              - { label: "Teléfono visible", name: "phone", widget: "string" }
+              - { label: "Descripción del teléfono", name: "phoneLabel", widget: "string" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Descripción del email", name: "emailLabel", widget: "string" }
+              - { label: "Nombre de Facebook", name: "facebookName", widget: "string" }
+              - { label: "URL de Facebook", name: "facebookUrl", widget: "string" }
+              - { label: "Descripción de Facebook", name: "facebookLabel", widget: "string" }
+              - { label: "Dirección", name: "address", widget: "string" }
+              - { label: "Descripción de dirección", name: "addressLabel", widget: "string" }
+              - { label: "Número de WhatsApp para link", name: "whatsappNumber", widget: "string" }
+              - { label: "Mensaje inicial de WhatsApp", name: "whatsappMessage", widget: "text" }
+              - { label: "Texto del botón de WhatsApp", name: "whatsappButton", widget: "string" }
+          - label: "Pie de página"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Nombre", name: "name", widget: "string" }
+              - { label: "Texto", name: "text", widget: "string" }
