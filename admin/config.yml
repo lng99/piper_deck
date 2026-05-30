@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: TU_USUARIO_DE_GITHUB/TU_REPOSITORIO
+  repo: https://github.com/lng99/piper_deck.git
   branch: main
 
 media_folder: "assets/uploads"
